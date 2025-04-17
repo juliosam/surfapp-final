@@ -71,6 +71,16 @@ html {
   margin: 0 auto;
 }
 
+.car-card {
+  border: 1px solid white !important;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
 img {
   border-radius: 1rem;
+  width: 150px;
+  height: 90px;
 }

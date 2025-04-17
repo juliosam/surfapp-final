@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehiculos",
+  "info": {
+    "singularName": "vehiculo",
+    "pluralName": "vehiculos",
+    "displayName": "Vehiculo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Marca": {
+      "type": "string",
+      "required": true
+    },
+    "Modelo": {
+      "type": "string",
+      "required": true
+    },
+    "Version": {
+      "type": "string"
+    },
+    "Year": {
+      "type": "integer",
+      "required": true
+    },
+    "Ciudad": {
+      "type": "string"
+    },
+    "Precio": {
+      "type": "biginteger"
+    },
+    "Recorrido": {
+      "type": "biginteger"
+    },
+    "Descripcion": {
+      "type": "blocks"
+    },
+    "Clima": {
+      "type": "string"
+    },
+    "Traccion": {
+      "type": "string"
+    },
+    "Transmision": {
+      "type": "string"
+    },
+    "Direccion": {
+      "type": "string"
+    },
+    "Subtipo": {
+      "type": "string"
+    },
+    "Color": {
+      "type": "string"
+    },
+    "Tapizado": {
+      "type": "string"
+    },
+    "Combustible": {
+      "type": "string"
+    },
+    "Estado": {
+      "type": "string"
+    },
+    "Fotos": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

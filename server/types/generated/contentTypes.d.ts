@@ -369,6 +369,38 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
+  collectionName: 'globals';
+  info: {
+    description: '';
+    displayName: 'Global';
+    pluralName: 'globals';
+    singularName: 'global';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    footer: Schema.Attribute.Component<'layout.footer', false>;
+    header: Schema.Attribute.Component<'layout.header', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global.global'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -430,6 +462,52 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiVehiculoVehiculo extends Struct.CollectionTypeSchema {
+  collectionName: 'vehiculos';
+  info: {
+    description: '';
+    displayName: 'Vehiculo';
+    pluralName: 'vehiculos';
+    singularName: 'vehiculo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Ciudad: Schema.Attribute.String;
+    Clima: Schema.Attribute.String;
+    Color: Schema.Attribute.String;
+    Combustible: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Descripcion: Schema.Attribute.Blocks;
+    Direccion: Schema.Attribute.String;
+    Estado: Schema.Attribute.String;
+    Fotos: Schema.Attribute.Media<'images' | 'files', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::vehiculo.vehiculo'
+    > &
+      Schema.Attribute.Private;
+    Marca: Schema.Attribute.String & Schema.Attribute.Required;
+    Modelo: Schema.Attribute.String & Schema.Attribute.Required;
+    Precio: Schema.Attribute.BigInteger;
+    publishedAt: Schema.Attribute.DateTime;
+    Recorrido: Schema.Attribute.BigInteger;
+    Subtipo: Schema.Attribute.String;
+    Tapizado: Schema.Attribute.String;
+    Traccion: Schema.Attribute.String;
+    Transmision: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Version: Schema.Attribute.String;
+    Year: Schema.Attribute.Integer & Schema.Attribute.Required;
   };
 }
 
@@ -942,8 +1020,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::product.product': ApiProductProduct;
+      'api::vehiculo.vehiculo': ApiVehiculoVehiculo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

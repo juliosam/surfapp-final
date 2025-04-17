@@ -1,0 +1,47 @@
+p{
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+div {
+    font-size: 1.8rem;
+    strong {
+        font-weight: 800;
+    }
+}
+
+.top-data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    p {
+        display: flex;
+        width: 35%;
+        font-size: 1.8rem;
+        strong {
+            font-weight: 800;
+        }
+    }
+}
+
+.bottom-data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    p {
+        display: flex;
+        width: 30%;
+        font-size: 1.6rem;
+        strong {
+            font-weight: 800;
+        }
+    }
+}
+
+

@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const cookieStore = await cookies();
+  console.log(cookieStore);
   const token = cookieStore.get("jwt"); // Obtener el JWT de la cookie
 
   if (!token) {

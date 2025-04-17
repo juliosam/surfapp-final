@@ -21,6 +21,7 @@ export async function GET(
   if (!token) return NextResponse.redirect(new URL("/", request.url));
 
   const provider = params.provider; // <-- Corrección aquí
+  //console.log(provider);
   const backendUrl =
     process.env.NEXT_PUBLIC_BACKEND_URL ?? "http://localhost:1337";
   const path = `/api/auth/${provider}/callback`;
